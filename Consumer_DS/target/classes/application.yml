@@ -1,0 +1,25 @@
+
+server:
+  port: 8012
+kafka:
+  consumer:
+    zookeeper:
+      connect: hdp1:2181,hdp2:2181,hdp3:2181
+    servers: hdp1:6667,hdp2:6667,hdp3:6667
+    enable:
+      auto:
+        commit: false
+    session:
+      timeout: 6000
+    auto:
+      commit:
+        interval: 100
+      offset:
+        reset: latest
+    topic: IOT_DS_DATA
+    group:
+      id: partitiontest002
+    concurrency: 10
+logging:
+  level:
+    root: INFO
